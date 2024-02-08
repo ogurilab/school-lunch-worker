@@ -1,23 +1,18 @@
 name = "school-lunch-worker"
 compatibility_date = "2023-12-01"
 
-[vars]
-WEBHOOK_URL = "<WEBHOOK_URL>"
-R2_URL = "<R2_URL>"
+# [vars]
+# MY_VARIABLE = "production_value"
 
 # [[kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
 # id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-[[r2_buckets]]
-binding = "BUCKET"
-bucket_name = "<R2_BUCKET_NAME>"
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
 
 # [[d1_databases]]
 # binding = "DB"
 # database_name = "my-database"
 # database_id = ""
-
-[triggers]
-
-crons = ["0 4 * * *"]
