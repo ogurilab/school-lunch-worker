@@ -1,8 +1,5 @@
-```
-npm install
-npm run dev
-```
+create env
 
-```
-npm run deploy
+```bash
+cp .dev.vars.example .dev.vars
 ```
