@@ -1,29 +1,20 @@
-import { OBJECT_METADATA } from "@/constant/handa";
-import { handaImageScraping } from "@/handlers/cron/handa/images";
+/* eslint-disable no-console */
+import { imageScraping } from "@/handlers/cron/images";
 import { Env } from "@/types";
-import { getTodayYYYYMMDD } from "@/utils/handa";
+import { getTodayDate } from "@/utils";
 
 const scheduled: ExportedHandlerScheduledHandler<Env> = async (event, env) => {
   switch (event.cron) {
-    case "0 4 * * *": {
-      try {
-        const data = await handaImageScraping();
+    case "0 4 * * 1-5": {
+      await imageScraping(env);
 
-        if (!data) throw new Error("Image not found");
+      const date = getTodayDate("YYYY年MM月DD日");
 
-        const bucket = env.BUCKET;
-
-        const key = `${getTodayYYYYMMDD()}.jpg`;
-        await bucket.put(key, data as Blob, OBJECT_METADATA);
-      } catch (error) {
-        // TODO: Discord notification
-        console.error(error);
-      }
+      console.log(`${date}のcron jobが実行されました`);
 
       break;
     }
     default: {
-      // eslint-disable-next-line no-console
       console.error("Unknown cron job");
 
       break;
