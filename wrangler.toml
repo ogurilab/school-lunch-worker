@@ -7,7 +7,7 @@ R2_URL = "<R2_URL>"
 
 [[r2_buckets]]
 binding = "BUCKET"
-bucket_name = "<R2_BUCKET_NAME>"
+bucket_name = "handa-kyushoku-image"
 
 
 [triggers]
