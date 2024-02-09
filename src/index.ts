@@ -6,11 +6,15 @@ import { getTodayDate } from "@/utils";
 const scheduled: ExportedHandlerScheduledHandler<Env> = async (event, env) => {
   switch (event.cron) {
     case "0 4 * * 1-5": {
-      await imageScraping(env);
+      try {
+        await imageScraping(env);
 
-      const date = getTodayDate("YYYY年MM月DD日");
+        const date = getTodayDate("ja");
 
-      console.log(`${date}のcron jobが実行されました`);
+        console.log(`${date}のcron jobが実行されました`);
+      } catch (error) {
+        console.error(error);
+      }
 
       break;
     }

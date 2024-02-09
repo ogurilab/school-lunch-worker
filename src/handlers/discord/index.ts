@@ -8,7 +8,7 @@ import { DiscordMessage, OnDiscordNotificationProps } from "@/types";
 import { getTodayDate } from "@/utils";
 
 function successMessage(url: string): DiscordMessage {
-  const date = getTodayDate("YYYY年MM月DD日");
+  const date = getTodayDate("ja");
 
   return {
     content: `New School Lunch Image on ${date}`,
@@ -25,7 +25,7 @@ function successMessage(url: string): DiscordMessage {
 }
 
 function errorMessage(error: unknown): DiscordMessage {
-  const date = getTodayDate("YYYY年MM月DD日");
+  const date = getTodayDate("ja");
 
   const content = `Error on ${date}`;
 

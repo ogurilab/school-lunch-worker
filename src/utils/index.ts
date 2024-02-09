@@ -3,7 +3,7 @@ import { load } from "cheerio";
 import { BASE_URL, HTML_URL } from "@/constant";
 import { ScrapingError } from "@/errors";
 
-export function getTodayDate(format: "YYYY年MM月DD日" | "YYYYMMDD") {
+export function getTodayDate(format: "ja" | "YYYYMMDD") {
   const date = new Date();
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
@@ -17,7 +17,7 @@ export function getTodayDate(format: "YYYY年MM月DD日" | "YYYYMMDD") {
 }
 
 function getAlt() {
-  const today = getTodayDate("YYYY年MM月DD日");
+  const today = getTodayDate("ja");
 
   return `${today}献立`;
 }

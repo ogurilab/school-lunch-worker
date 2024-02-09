@@ -5,18 +5,10 @@ compatibility_date = "2023-12-01"
 WEBHOOK_URL = "<WEBHOOK_URL>"
 R2_URL = "<R2_URL>"
 
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-
 [[r2_buckets]]
 binding = "BUCKET"
 bucket_name = "<R2_BUCKET_NAME>"
 
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "my-database"
-# database_id = ""
 
 [triggers]
 
