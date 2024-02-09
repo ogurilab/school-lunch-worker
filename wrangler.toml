@@ -20,4 +20,4 @@ bucket_name = "<R2_BUCKET_NAME>"
 
 [triggers]
 
-crons = ["0 4 * * *"]
+crons = ["0 4 * * 1-5"]
